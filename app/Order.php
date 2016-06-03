@@ -8,7 +8,19 @@ class Order extends Model
 {
     protected $table = 'orders';
 
-    protected $fillable = ['serie_id', 'product', 'page', 'model', 'id_product', 'numb_size', 'store_cost', 'client_cost', 'weekly_amount', 'user_id'];
+    protected $fillable = [
+        'serie_id',
+        'product',
+        'page',
+        'model',
+        'id_product',
+        'numb_size',
+        'store_cost',
+        'client_cost',
+        'weekly_amount',
+        'weeks',
+        'user_id'
+    ];
 
     public function user ()
     {
@@ -23,5 +35,10 @@ class Order extends Model
     public function serie()
     {
         return $this->belongsTo('\App\Serie');
+    }
+    
+    public function getTotalWeeksAttribute()
+    {
+        return $this->serie->week_number;
     }
 }

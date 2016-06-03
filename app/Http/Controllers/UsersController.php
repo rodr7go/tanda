@@ -54,7 +54,9 @@ class UsersController extends Controller
     public function store(CreateUserRequest $request)
     {
         $user = User::create($request->all());
+        $user->password = bcrypt($user->password);
         $user->attachRole($request->get('role_id'));
+        $user->update();
         $role = $user->roles->first()->name;
 
         return redirect()->route('users.index.role', $role);
@@ -95,9 +97,9 @@ class UsersController extends Controller
     public function update(EditUserRequest $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->update();
         $user->roles()->sync([$request->get('role_id')]);
         $role = $user->roles->first()->name;
+        $user->update();
 
         return redirect()->route('users.index.role', $role);
     }

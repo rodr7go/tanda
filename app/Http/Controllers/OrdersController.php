@@ -76,9 +76,9 @@ class OrdersController extends Controller
         $serie = Serie::findOrFail($serie_id);
         $users = User::lists('first_name', 'id');
         $users->prepend(null, null);
-        $orders = Order::findOrFail($id);
+        $order = Order::findOrFail($id);
 
-        return view('orders.edit', compact('orders', 'users', 'serie'));
+        return view('orders.edit', compact('order', 'users', 'serie'));
     }
 
     /**
@@ -90,8 +90,10 @@ class OrdersController extends Controller
      */
     public function update(EditOrderRequest $request, $id)
     {
-        $orders = Order::findOrFail($id);
-        $orders->update($request->all());
+        $order = Order::findOrFail($id);
+        $order->update($request->except('weeks'));
+        $order->weeks = count($request->get('weeks'));
+        $order->update();
         $serie_id = $request->get('serie_id');
 
         return redirect()->route('series.orders.index', $serie_id);

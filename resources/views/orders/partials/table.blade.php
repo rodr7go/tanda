@@ -12,6 +12,7 @@
                 <th>Costo-tienda</th>
                 <th>Costo-cliente</th>
                 <th>Importe-semanal</th>
+                <th>Pagos</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td> {{ $order->store_cost }} </td>
                 <td> {{ $order->client_cost }} </td>
                 <td> {{ $order->weekly_amount }} </td>
+                <td> {{ $order->weeks }} </td>
                 <td>
                     <a class="btn btn-info fa fa-pencil" href="{!! route('series.orders.edit', [$order->serie->id, $order->id]) !!} "></a>
                     @if ($order->user)

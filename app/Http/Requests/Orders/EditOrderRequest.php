@@ -32,7 +32,7 @@ class EditOrderRequest extends Request
             'numb_size' => 'required',
             'store_cost' => 'required',
             'client_cost' => 'required',
-            'weekly_amount' => 'required'
+            'weekly_amount' => 'required',
         ];
     }
 }
