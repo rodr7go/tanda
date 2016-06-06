@@ -43,6 +43,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('\App\Order');
     }
+
+    public function series()
+    {
+        return $this->hasMany(Serie::class);
+    }
     
 //    public function setPasswordAttribute($value)
 //    {

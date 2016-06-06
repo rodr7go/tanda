@@ -92,12 +92,12 @@ class OrdersController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->update($request->except('weeks'));
-        dd($order);
         $order->weeks = count($request->get('weeks'));
         $order->save();
         $serie_id = $request->get('serie_id');
 
         return redirect()->route('series.orders.index', $serie_id);
+        dd($order);
     }
 
     /**

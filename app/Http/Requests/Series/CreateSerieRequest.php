@@ -27,7 +27,7 @@ class CreateSerieRequest extends Request
             'name' => 'required',
             'start_date' => 'required',
             'ending_date' => 'required',
-            'responsible' => 'required',
+            'user_id' => 'required',
             'week_number' => 'required',
             'category' => 'required'
         ];

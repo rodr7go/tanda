@@ -14,18 +14,19 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table){
             $table->increments('id');
+
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('serie_id')->unsigned();
             $table->foreign('serie_id')->references('id')->on('series');
             $table->integer('weeks')->unsigned()->nullable();
             $table->string('product');
-            $table->string('page');
-            $table->string('model')->nullable();
-            $table->string('id_product');
+            $table->string('page', 20);
+            $table->string('model', 20)->nullable();
+            $table->string('id_product', 20);
             $table->string('numb_size');
-            $table->string('store_cost');
-            $table->string('client_cost');
+            $table->decimal('store_cost', 10, 2)->unsigned();
+            $table->decimal('client_cost', 10, 2)->unsigned();
             $table->timestamps();
         });
     }

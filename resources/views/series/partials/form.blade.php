@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('start_date', 'Fecha de inicio') !!}
-            {!! Form::text('start_date', null, ['class' => 'form-control']) !!}
+            {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -16,25 +16,25 @@
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('ending_date', 'Fecha de fin') !!}
-            {!! Form::text('ending_date', null, ['class' => 'form-control']) !!}
+            {!! Form::date('ending_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            {!! Form::label('responsible', 'Responsable') !!}
-            {!! Form::text('responsible', null, ['class' => 'form-control']) !!}
+            {!! Form::label('user_id', 'Responsable') !!}
+            {!! Form::select('user_id', $users, null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('week_number', 'Numero de semanas') !!}
-            {!! Form::text('week_number', null, ['class' => 'form-control']) !!}
+            {!! Form::number('week_number', null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('category', 'Categoria') !!}
-            {!! Form::select('category', [ '0' => '', 'Tenis' => 'Tenis', 'Zapatos' => 'Zapatos', 'Ropa' => 'Ropa', 'Varios' => 'Varios' ],null , [ 'class' => 'form-control' ]) !!}
+            {!! Form::select('category', $categories, null , [ 'class' => 'form-control' ]) !!}
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,7 +20,7 @@ class SeriesController extends Controller
      */
     public function index()
     {
-        $series = Serie::all();
+        $series = Serie::with('responsible')->get();
 
         return view('series.index', compact('series'));
     }
@@ -32,8 +33,15 @@ class SeriesController extends Controller
     public function create()
     {
         $serie = new Serie;
-
-        return view('series.create', compact('serie'));
+        $users = User::all()->lists('full_name', 'id');
+        $categories = [
+            '0' => '',
+            'Tenis' => 'Tenis',
+            'Zapatos' => 'Zapatos',
+            'Ropa' => 'Ropa',
+            'Varios' => 'Varios'
+        ];
+        return view('series.create', compact('serie', 'users', 'categories'));
     }
 
     /**
@@ -69,8 +77,16 @@ class SeriesController extends Controller
     public function edit($id)
     {
         $serie = Serie::findOrFail($id);
+        $users = User::all()->lists('full_name', 'id');
+        $categories = [
+            '0' => '',
+            'Tenis' => 'Tenis',
+            'Zapatos' => 'Zapatos',
+            'Ropa' => 'Ropa',
+            'Varios' => 'Varios'
+        ];
 
-        return view('series.edit', compact('serie'));
+        return view('series.edit', compact('serie', 'users', 'categories'));
     }
 
     /**
@@ -98,6 +114,13 @@ class SeriesController extends Controller
     {
         $serie = Serie::findOrFail($id);
 
+        if ($serie->has('orders'))
+        {
+            foreach($serie->orders as $order)
+            {
+                $order->delete();
+            }
+        }
         $serie->delete();
 
         return redirect()->route('series.index');

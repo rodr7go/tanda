@@ -15,10 +15,11 @@ class CreateSeriesTable extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('start_date');
-            $table->string('ending_date');
-            $table->string('responsible');
-            $table->string('week_number');
+            $table->date('start_date');
+            $table->date('ending_date');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('week_number');
             $table->string('category');
             $table->timestamps();
         });

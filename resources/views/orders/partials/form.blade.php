@@ -1,4 +1,5 @@
 <div class="row">
+    {{--{{ dd($users) }}--}}
 
     {!! Form::hidden('serie_id', $serie->id) !!}
 
@@ -43,13 +44,13 @@
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('store_cost', 'Costo Tienda') !!}
-            {!! Form::text('store_cost', null, ['class' => 'form-control']) !!}
+            {!! Form::number('store_cost', null, ['class' => 'form-control', 'step' => 'any']) !!}
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('client_cost', 'Costo Cleinte') !!}
-            {!! Form::text('client_cost', null, ['class' => 'form-control']) !!}
+            {!! Form::number('client_cost', null, ['class' => 'form-control', 'step' => 'any']) !!}
         </div>
     </div>
     @if (isset($order))
