@@ -13,7 +13,7 @@
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            {!! Form::label('Permiso') !!}
+            {!! Form::label('Perfil') !!}
             {!! Form::select('role_id', $roles, null,  ['class' => 'form-control']) !!}
         </div>
     </div>

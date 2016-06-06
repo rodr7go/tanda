@@ -17,7 +17,6 @@ class Order extends Model
         'numb_size',
         'store_cost',
         'client_cost',
-        'weekly_amount',
         'weeks',
         'user_id'
     ];
@@ -29,7 +28,7 @@ class Order extends Model
 
     public function getFolioAttribute()
     {
-        return  sprintf("%'.04d\n", $this->id);
+        return sprintf("%'.04d\n", $this->id);
     }
 
     public function serie()
@@ -40,5 +39,10 @@ class Order extends Model
     public function getTotalWeeksAttribute()
     {
         return $this->serie->week_number;
+    }
+
+    public function getWeeklyAmountAttribute()
+    {
+        return ;
     }
 }

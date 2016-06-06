@@ -49,7 +49,7 @@ class OrdersController extends Controller
     public function store(CreateOrderRequest $request)
     {
         $serie_id = $request->get('serie_id');
-        $orders = Order::create($request->all());
+        $order = Order::create($request->all());
 
         return redirect()->route('series.orders.index', $serie_id);
     }
@@ -92,8 +92,9 @@ class OrdersController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->update($request->except('weeks'));
+        dd($order);
         $order->weeks = count($request->get('weeks'));
-        $order->update();
+        $order->save();
         $serie_id = $request->get('serie_id');
 
         return redirect()->route('series.orders.index', $serie_id);

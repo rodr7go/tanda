@@ -52,12 +52,6 @@
             {!! Form::text('client_cost', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="form-group">
-            {!! Form::label('weekly_amount', 'Importe semanal') !!}
-            {!! Form::text('weekly_amount', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
     @if (isset($order))
         <div class="col-xs-12">
             <div class="col-xs-6">
