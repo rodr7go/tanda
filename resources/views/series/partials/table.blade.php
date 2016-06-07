@@ -21,6 +21,7 @@
             <td> {{ $serie->category }} </td>
             <td>
                 <a class="btn btn-dark fa fa-plus" title="Crear pedido" href=" {!! route('series.orders.create', $serie->id) !!} "></a>
+                <a href="http://tiendaenlinea.priceshoes.com/herramientas/catalogos-virtuales" class="btn btn-orange fa fa-eye" target="_blank" title="Ver catalogo"></a>
                 <a class="btn btn-info fa fa-pencil" title="Editar" href="{!! route('series.edit', $serie) !!} "></a>
                 <a class="btn btn-delete btn-danger fa fa-trash-o" title="Eliminar" data-name=" {{ $serie->name }} " href="{!! route('series.delete', $serie) !!}"></a>
             </td>

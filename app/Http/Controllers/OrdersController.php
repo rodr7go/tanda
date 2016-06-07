@@ -24,8 +24,11 @@ class OrdersController extends Controller
     {
         $serie = Serie::findOrFail($serie_id);
         $orders = Order::where('serie_id', $serie->id)->get();
+        $totalStoreCost =  Order::totalStoreCost();
+        $totalClientCost = Order::totalClientCost();
+        $totalWeeklyAmount = Order::totalWeeklyAmount($serie_id);
 
-        return view('orders.index', compact('orders', 'serie'));
+        return view('orders.index', compact('orders', 'serie', 'totalStoreCost', 'totalClientCost', 'totalWeeklyAmount'));
     }
 
     /**
@@ -75,7 +78,7 @@ class OrdersController extends Controller
     {
         $serie = Serie::findOrFail($serie_id);
         $users = User::lists('first_name', 'id');
-        $users->prepend(null, null);
+        $users->prepend('', 0);
         $order = Order::findOrFail($id);
 
         return view('orders.edit', compact('order', 'users', 'serie'));
