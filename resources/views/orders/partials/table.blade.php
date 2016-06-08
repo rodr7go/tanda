@@ -62,16 +62,16 @@
                 <td></td>
             </tr>
             <tr>
-                <td><strong>Total:</strong></td>
+                <td><strong style="color: black;">Total:</strong></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td> {{ $totalStoreCost }} </td>
-                <td> {{ $totalClientCost }} </td>
-                <td> {{ $totalWeeklyAmount }} </td>
+                <td><strong style="color: green;"> {{ $totalStoreCost }} </strong></td>
+                <td><strong style="color: green;"> {{ $totalClientCost }} </strong></td>
+                <td><strong style="color: green;"> {{ $totalWeeklyAmount }} </strong></td>
                 <td></td>
                 <td></td>
             </tr>
