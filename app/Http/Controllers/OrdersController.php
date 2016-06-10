@@ -24,11 +24,16 @@ class OrdersController extends Controller
     {
         $serie = Serie::findOrFail($serie_id);
         $orders = Order::where('serie_id', $serie->id)->get();
-        $totalStoreCost =  Order::totalStoreCost();
-        $totalClientCost = Order::totalClientCost();
-        $totalWeeklyAmount = Order::totalWeeklyAmount($serie_id);
+        
+        $totals = [
+            'storeCost' =>  Order::totalStoreCost($serie_id),
+            'clientCost' => Order::totalClientCost($serie_id),
+            'weeklyAmount' => Order::totalWeeklyAmount($serie_id),
+            'weekPayments' => Order::totalWeekPayments($serie_id),
+            'totalGain' => Order::totalGain($serie_id),
+        ];
 
-        return view('orders.index', compact('orders', 'serie', 'totalStoreCost', 'totalClientCost', 'totalWeeklyAmount'));
+        return view('orders.index', compact('orders', 'serie', 'totals'));
     }
 
     /**
@@ -100,7 +105,6 @@ class OrdersController extends Controller
         $serie_id = $request->get('serie_id');
 
         return redirect()->route('series.orders.index', $serie_id);
-        dd($order);
     }
 
     /**

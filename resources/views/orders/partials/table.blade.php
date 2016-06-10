@@ -69,11 +69,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><strong style="color: green;"> {{ $totalStoreCost }} </strong></td>
-                <td><strong style="color: green;"> {{ $totalClientCost }} </strong></td>
-                <td><strong style="color: green;"> {{ $totalWeeklyAmount }} </strong></td>
-                <td></td>
-                <td></td>
+                <td><strong style="color: green;"> {{ $totals['storeCost'] }} </strong></td>
+                <td><strong style="color: green;"> {{ $totals['clientCost'] }} </strong></td>
+                <td><strong style="color: green;"> {{ $totals['weeklyAmount'] }} </strong></td>
+                <td><strong style="color: green;"> {{ $totals['weekPayments'] }} </strong></td>
+                <td><strong style="color: green;"> {{ $totals['totalGain'] }} </strong></td>
             </tr>
         </tbody>
         <tfoot>
@@ -88,8 +88,8 @@
                 <th>Costo-tienda</th>
                 <th>Costo-cliente</th>
                 <th>Importe-semanal</th>
-                <th></th>
-                <th></th>
+                <th>Pagos</th>
+                <th>Ganancia</th>
             </tr>
         </tfoot>
     </table>

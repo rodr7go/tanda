@@ -46,15 +46,15 @@ class Order extends Model
         return $this->client_cost / $this->serie->week_number;
     }
 
-    public static function totalStoreCost()
+    public static function totalStoreCost($serie_id = null)
     {
-        $total = Order::lists('store_cost')->sum();
+        $total = Order::where('serie_id', $serie_id)->lists('store_cost')->sum();
         return '$' . number_format($total, 2);
     }
 
-    public static function totalClientCost()
+    public static function totalClientCost($serie_id)
     {
-        $total = Order::lists('client_cost')->sum();
+        $total = Order::where('serie_id', $serie_id)->lists('client_cost')->sum();
         return '$' . number_format($total, 2);
     }
 
@@ -68,4 +68,18 @@ class Order extends Model
         }
         return '$' . number_format($totalWeeklyAmounts->sum(), 2);
     }
+
+    public static function totalWeekPayments($serie_id = null)
+    {
+        $total = Order::where('serie_id', $serie_id)->lists('weeks')->sum();
+        return '#' . $total;
+    }
+
+    public static function totalGain($serie_id)
+    {
+        $clientsCost = Order::where('serie_id', $serie_id)->lists('client_cost')->sum();
+        $storeCost = Order::where('serie_id', $serie_id)->lists('store_cost')->sum();
+        return '$' . number_format($clientsCost - $storeCost, 2);
+    }
+
 }
