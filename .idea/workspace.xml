@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2932098-d08a-40ba-bc65-d47ec69bae29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/orders/partials/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/orders/partials/table.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/series/partials/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/series/partials/table.blade.php" />
     </list>
     <ignored path="Tanda.iws" />
@@ -54,8 +50,8 @@
       <file leaf-file-name="table.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/series/partials/table.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="598">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -906,12 +902,12 @@
       <workItem from="1465272927715" duration="695000" />
       <workItem from="1465322859903" duration="12522000" />
       <workItem from="1465490581733" duration="11491000" />
-      <workItem from="1465577591614" duration="1307000" />
+      <workItem from="1465577591614" duration="2046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248299000" />
+    <option name="totallyTimeSpent" value="249038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1554" height="916" extended-state="6" />
@@ -1301,8 +1297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/series/partials/table.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="598">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding />
         </state>
       </provider>
