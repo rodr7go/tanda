@@ -34,7 +34,11 @@
 
     <div id="wrapper">
         <!--BEGIN SIDEBAR MENU-->
-        @include('layouts.menu')
+        @if (Entrust::hasRole(['admin']))
+            @include('layouts.menu-admin')
+        @else
+            @include('layouts.menu-user')
+        @endif
         <!--END SIDEBAR MENU-->
 
         <!--BEGIN PAGE WRAPPER-->

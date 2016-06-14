@@ -25,8 +25,13 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::group(['middleware' => 'auth'], function (){
     Route::get('/', function () {
-        return redirect()->route('series.index');
+
+        if (\Entrust::hasRole(['admin']))
+            return redirect()->route('series.index');
+
+        return redirect()->route('series.users.index');
     });
+
     require_once app_path('Http/Routes/users.php');
     require_once app_path('Http/Routes/orders.php');
     require_once app_path('Http/Routes/roles.php');

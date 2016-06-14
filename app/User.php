@@ -48,6 +48,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany(Serie::class);
     }
+
+    public static function getSeriesByUser($user_id = null)
+    {
+        $series = collect();
+
+        if ($user_id == null)
+            $orders = \Auth::user()->orders;
+        else
+            $orders = User::find($user_id)->orders;
+
+        foreach ($orders as $order)
+        {
+            if ( ! $series->contains($order->serie))
+                $series->push($order->serie);
+        }
+
+       return $series;
+    }
     
 //    public function setPasswordAttribute($value)
 //    {

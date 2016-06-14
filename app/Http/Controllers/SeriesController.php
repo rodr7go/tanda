@@ -10,6 +10,7 @@ use App\Serie;
 use App\Http\Requests\Series\EditSerieRequest;
 use App\Http\Requests\Series\CreateSerieRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SeriesController extends Controller
 {
@@ -22,6 +23,12 @@ class SeriesController extends Controller
     {
         $series = Serie::with('responsible')->get();
 
+        return view('series.index', compact('series'));
+    }
+
+    public function getSeriesByUser()
+    {
+        $series = User::getSeriesByUser();
         return view('series.index', compact('series'));
     }
 

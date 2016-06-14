@@ -26,7 +26,7 @@ class UsersController extends Controller
             $title = 'Administradores';
         else
             $title = 'Usuarios';
-
+        
         $users = $role->users;
 
         return view('users.index', compact('users', 'title'));

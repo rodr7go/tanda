@@ -23,7 +23,7 @@
                         {{--<li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>--}}
                         {{--<li class="divider"></li>--}}
                         {{--<li><a href="#"><i class="fa fa-lock"></i>Lock Screen</a></li>--}}
-                        <li><a href="auth/logout" style="color: black;"><i class="fa fa-sign-out"></i> Salir </a></li>
+                        <li><a href="/auth/logout" style="color: black;"><i class="fa fa-sign-out"></i> Salir </a></li>
                     </ul>
                 </li>
             </ul>
