@@ -23,8 +23,11 @@ class OrdersController extends Controller
     public function index($serie_id = null)
     {
         $serie = Serie::findOrFail($serie_id);
-        $orders = Order::where('serie_id', $serie->id)->get();
-        
+        if (\Entrust::hasRole([ 'admin' ]))
+            $orders = Order::where('serie_id', $serie->id)->get();
+        else
+            $orders = Order::where('serie_id', $serie->id)->where('user_id', \Auth::user()->id)->get();
+
         $totals = [
             'storeCost' =>  Order::totalStoreCost($serie_id),
             'clientCost' => Order::totalClientCost($serie_id),

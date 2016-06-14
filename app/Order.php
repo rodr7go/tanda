@@ -81,5 +81,4 @@ class Order extends Model
         $storeCost = Order::where('serie_id', $serie_id)->lists('store_cost')->sum();
         return '$' . number_format($clientsCost - $storeCost, 2);
     }
-
 }

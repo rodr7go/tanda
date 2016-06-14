@@ -66,10 +66,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
        return $series;
     }
-    
-//    public function setPasswordAttribute($value)
-//    {
-//        return bcrypt($value);
-//    }
-
 }

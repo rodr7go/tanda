@@ -4,10 +4,16 @@
 @section('content')
     <div class="portlet box">
         <div class="portlet-header"><h4>Lista de pedidos</h4>
-            <a class="btn btn-yellow" href="{{ route('series.orders.create', $serie->id) }}">Nuevo Pedido</a>
+            @if (Entrust::hasRole('admin'))
+                <a class="btn btn-yellow" href="{{ route('series.orders.create', $serie->id) }}">Nuevo Pedido</a>
+            @endif
         </div>
         <div class="portlet-body">
-            @include('orders.partials.table')
+            @if (Entrust::hasRole('admin'))
+                @include('orders.partials.table-admin')
+            @else
+                @include('orders.partials.table-user')
+            @endif
         </div>
     </div>
 @endsection
