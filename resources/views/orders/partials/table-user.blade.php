@@ -2,15 +2,15 @@
     <table class="table table-striped dynatable">
         <thead>
             <tr>
-                <th>Nombre Completo</th>
+                <th>Nombre</th>
                 <th>Folio</th>
                 <th>Producto</th>
                 <th>Pagina</th>
                 <th>Modelo</th>
-                <th>ID(producto)</th>
+                <th>ID</th>
                 <th>Numero o talla</th>
-                <th>Costo-cliente</th>
-                <th>Importe-semanal</th>
+                <th>Costo</th>
+                <th>Importe semanal</th>
                 <th>Pagos</th>
                 <th>Acciones</th>
             </tr>
@@ -39,6 +39,21 @@
                     </td>
                 </tr>
             @endforeach
+        <tfoot>
+        <tr>
+            <th>Nombre</th>
+            <th>Folio</th>
+            <th>Producto</th>
+            <th>Pagina</th>
+            <th>Modelo</th>
+            <th>ID</th>
+            <th>Numero o talla</th>
+            <th>Costo</th>
+            <th>Importe semanal</th>
+            <th>Pagos</th>
+            <th>Acciones</th>
+        </tr>
+        </tfoot>
         </tbody>
     </table>
 </div>

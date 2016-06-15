@@ -9,9 +9,9 @@
                 <th>Modelo</th>
                 <th>ID(producto)</th>
                 <th>Numero o talla</th>
-                <th>Costo-tienda</th>
-                <th>Costo-cliente</th>
-                <th>Importe-semanal</th>
+                <th>Costo tienda</th>
+                <th>Costo cliente</th>
+                <th>Importe semanal</th>
                 <th>Pagos</th>
                 <th>Acciones</th>
             </tr>
@@ -85,9 +85,9 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th>Costo-tienda</th>
-                <th>Costo-cliente</th>
-                <th>Importe-semanal</th>
+                <th>Costo tienda</th>
+                <th>Costo cliente</th>
+                <th>Importe semanal</th>
                 <th>Pagos</th>
                 <th>Ganancia</th>
             </tr>

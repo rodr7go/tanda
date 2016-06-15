@@ -20,5 +20,15 @@
             <td> {{ $serie->category }} </td>
         </tr>
     @endforeach
+    <tfoot>
+    <tr>
+        <th>Nombre</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de fin</th>
+        <th>Responsable</th>
+        <th>Numero de Semanas</th>
+        <th>Categoria</th>
+    </tr>
+    </tfoot>
     </tbody>
 </table>
