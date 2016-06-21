@@ -26,22 +26,22 @@ class OrderTableSeeder extends Seeder
         ]);
 
 
-        for($i = 0; $i < 10; $i++)
-        {
-            $faker = \Faker\Factory::create('es_ES');
-
-            DB::table('orders')->insert([
-                'product' => $faker->name,
-                'page' => $faker->name,
-                'model' => $faker->name,
-                'id_product' => $faker->name,
-                'numb_size' => $faker->name,
-                'store_cost' => $faker->name,
-                'client_cost' => $faker->name,
-                'weekly_amount' => $faker->name,
-                'serie_id' => $series->random()
-            ]);
-        }
+//        for($i = 0; $i < 10; $i++)
+//        {
+//            $faker = \Faker\Factory::create('es_ES');
+//
+//            DB::table('orders')->insert([
+//                'product' => $faker->name,
+//                'page' => $faker->name,
+//                'model' => $faker->name,
+//                'id_product' => $faker->name,
+//                'numb_size' => $faker->name,
+//                'store_cost' => $faker->name,
+//                'client_cost' => $faker->name,
+//                'weekly_amount' => $faker->name,
+//                'serie_id' => $series->random()
+//            ]);
+//        }
 
     }
 }
